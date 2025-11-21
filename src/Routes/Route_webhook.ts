@@ -3,9 +3,10 @@ import { type Request, type Response } from "express";
 import { readChatController } from "../Controllers/readChatController.js";
 import { gemini } from "../Controllers/gemini.js";
 
-const webhook = express.Router();
+const Route_webhook = express.Router();
 
-webhook.get("/readChat", readChatController);
-webhook.post("/newChat", gemini);
+Route_webhook.get("/readChat", readChatController);
 
-export { webhook };
+Route_webhook.post("/newChat", gemini);
+
+export { Route_webhook };

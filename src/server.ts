@@ -1,10 +1,14 @@
 import express, { type Request, type Response } from "express";
 import rateLimit from "express-rate-limit";
-import { webhook } from "./Routes/webhook.js";
+import { Route_webhook } from "./Routes/Route_webhook.js";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 dotenv.config();
 
+// axios for webhook trial
+import axios from "axios";
+import { time, timeStamp } from "console";
+import { testingEndpoint } from "./Controllers/svixTesting/testing.js";
 // mongoose.connect(process.env.DATABASE_STRING)
 
 const app = express().use(express.json());
@@ -22,7 +26,9 @@ const limiter = rateLimit({
 
 app.use(limiter);
 
-app.use("/chatBot/v1/webhook", webhook);
+app.use("/chatBot/v1/webhook", Route_webhook);
+
+app.use("/central", testingEndpoint);
 
 const PORT = process.env.PORT;
 

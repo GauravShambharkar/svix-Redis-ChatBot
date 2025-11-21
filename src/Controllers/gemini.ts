@@ -10,6 +10,7 @@ const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 const gemini = async (req: Request, res: Response) => {
   const { newMsg } = req.body;
 
+
   if (!GEMINI_API_KEY) {
     return res.status(500).send({
       err: "Missing GEMINI_API_KEY in environment variables",
