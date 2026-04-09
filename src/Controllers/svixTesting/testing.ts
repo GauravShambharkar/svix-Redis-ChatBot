@@ -3,8 +3,8 @@ import { Svix, Webhook } from "svix";
 
 const testingEndpoint = express.Router();
 // step 1 - from the event end point
-const apiToken = "testsk_Mdxs5tNppTWJ6LPkfLWfCyCJPYqs5AzC.eu";
-const AppId = "app_34NHWsSBFHHbREgBatE5QbDANFr";
+const apiToken = "testsk_Mdxs5tNppTWJ6LPkfLWfCyCJPYqs5AzC.eu";  // was intentional, dont judge
+const AppId = "app_34NHWsSBFHHbREgBatE5QbDANFr"; // was intentional, dont judge
 
 // step 2 - on the webhook receiver end
 const signInSecret = "whsec_aCRWj7IvTM0yYBxuClJ/Qy/jE0QlntJA";
